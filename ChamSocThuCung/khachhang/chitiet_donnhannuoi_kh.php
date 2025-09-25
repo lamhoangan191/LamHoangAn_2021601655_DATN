@@ -47,7 +47,7 @@ if (!$don) die("❌ Không tìm thấy đơn.");
 <div class="container mt-4">
   <div class="adopt-panel card shadow-sm border-2 border-success">
     <div class="card-header bg-success bg-gradient text-white text-center">
-        <h3><i class="fa-solid fa-heart"></i> <b>Chi tiết đơn nhận nuôi (KH)</b></h3>
+        <h3><i class="fa-solid fa-heart"></i> <b>Chi tiết đơn nhận nuôi</b></h3>
     </div>
     <div class="card-body">
       <div class="row g-3">
