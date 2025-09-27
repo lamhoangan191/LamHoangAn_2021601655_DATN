@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO taikhoan (username, password, vaitro, hoten, tuoi, gioitinh, email, sdt, diachi) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssssss", $username, $password, $vaitro, $hoten, $tuoi, $gioitinh, $email, $sdt, $diachi);
+    $stmt->bind_param("ssssissss", $username, $password, $vaitro, $hoten, $tuoi, $gioitinh, $email, $sdt, $diachi);
 
     if ($stmt->execute()) {
         $message = "✅ Đăng ký thành công! Hãy đăng nhập.";
