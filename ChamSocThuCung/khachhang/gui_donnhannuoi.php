@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $today   = date('Y-m-d H:i:s');
 
     // Chặn gửi trùng cùng 1 pet khi đơn đang tồn tại (chờ duyệt/đã duyệt)
-    $check = $conn->prepare("SELECT donnn_id FROM donnhannuoi WHERE user_id=? AND petcs_id=? AND trangthai IN ('chờ duyệt','đã duyệt') LIMIT 1");
-    $check->bind_param("ii", $user_id, $petcs_id);
+    $check = $conn->prepare("SELECT donnn_id FROM donnhannuoi WHERE petcs_id=? AND trangthai IN ('chờ duyệt','đã duyệt') LIMIT 1");
+    $check->bind_param("i", $petcs_id);
     $check->execute();
     $has = $check->get_result()->num_rows > 0;
 
