@@ -168,7 +168,12 @@ $khachhang = $stmt->get_result()->fetch_assoc();
 
     <!-- Nút quay lại -->
     <div class="text-center mt-3">
-      <a href="chitietthucung_kh.php?id=<?php echo $pet['petcs_id']; ?>&page=<?= $page ?>" class="btn btn-secondary fw-bold">⬅ Quay lại</a>
+        <?php
+        // sau khi đã lấy $pet và $page
+        $back = isset($_GET['back']) ? urldecode($_GET['back']) : "chitietthucung_kh.php?id={$pet['petcs_id']}&page={$page}";
+        ?>
+        <!-- Nút Quay lại dùng $back -->
+        <a href="<?= htmlspecialchars($back) ?>" class="btn btn-secondary fw-bold">⬅ Quay lại</a>
     </div>
 </div>
 
