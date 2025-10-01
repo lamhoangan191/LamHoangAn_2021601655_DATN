@@ -65,7 +65,11 @@ $pet = $result->fetch_assoc();
                 <span class="text-muted">No Image</span>
               </div>
             <?php endif; ?>
-            <a href="gui_donnhannuoi.php?id=<?php echo $pet['petcs_id']; ?>&page=<?= isset($_GET['page']) ? (int)$_GET['page'] : 1 ?>" class="btn btn-primary mt-3 w-75 fw-bold">Nhận nuôi</a>
+            <?php
+            $back_param = urlencode($_SERVER['REQUEST_URI']); // giữ nguyên query (filter) hiện tại
+            ?>
+            <!-- nút Nhận nuôi -->
+            <a href="gui_donnhannuoi.php?id=<?= $pet['petcs_id'] ?>&back=<?= $back_param ?>" class="btn btn-primary mt-3 w-75 fw-bold">Nhận nuôi</a>
           </div>
 
           <!-- Thông tin chi tiết -->
